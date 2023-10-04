@@ -240,193 +240,219 @@ img{
 }
 
 
-/* <!-- ////////////////////////// LANDING SECTION \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ --> */
 
-.about__landing__section{
-    background: url(./img/about-cover.jpg);
+/* {{{{{{{{{{{{{{{{{{{{{{{{{ HEADING }}}}}}}}}}}}}}}}}}}}}}}}} */
+
+.service__heading{
     height: 100vh;
+    background: url("img/about-cover.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
 }
 
-.about__landing__section::before{
+.service__heading:before{
     content: "";
+    width: 100%;
+    height: 100%;
     background: var(--first-color);
     position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    opacity: 0.7;
+    opacity: .7;
 }
 
-.about__landing__section__container{
+.service__heading__container{
+    width: 100%;
+    height: 100%;
     padding: var(--container-padding-alt);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
 }
 
-.about__landing__section__content{
+.service__heading__content{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: var(--white-color);
-    width: 100%;
-    height: 100%;
-    z-index: 20;
     text-align: center;
+    color: var(--white-color);
+    height: 100%;
+    width: 100%;
 }
 
-.about__landing__section__content__p{
+.service__heading__content p,
+.service__heading__content h3,
+.service__heading__content button {
+    z-index: 50;
+}
+
+.service__heading__content p{
+    margin: 20px 0 40px 0;
+}
+
+.service__heading__btn{
+    padding: 10px 30px;
+    color: var(--black-color);
+    background: var(--white-color);
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.service__heading__btn:hover{
+    border: 2px solid var(--white-color);
+    background: transparent;
+    color: var(--white-color);
+}
+
+
+
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@ GRID ::::::::::::::::::@@@ */
+
+.grid{
+    background: var(--first-color);
+}
+
+.grid__content{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    color: var(--white-color);
+}
+
+.grid__card{
+    width: 100%;
+    padding: 10px;
+    display: flex;
+}
+
+.grid__card:first-child,
+.grid__card:nth-child(3),
+.grid__card:nth-child(5){
+    background: var(--black-color);
+}
+
+.grid__card__content{
+    margin-left: 10px;
+}
+
+.grid__card__content p{
     margin: 20px 0;
 }
 
-.about__landing__section__content__btn{
-    padding: 10px 30px;
-    background: var(--white-color);
-    border-radius: 50px;
-}
-
-.about__landing__section__content__btn:hover{
-    border: 1px solid var(--white-color);
+.grid__card__btn{
+    border: none;
+    outline: none;
     background: transparent;
-}
-
-.about__landing__section__content__btn:hover .about__landing__section__content__link{
     color: var(--white-color);
+    margin: 10px 0;
+    cursor: pointer;
 }
 
-.about__landing__section__content__link{
-    color: var(--black-color);
+.grid__card__btn:hover{
+    border: 1px solid var(--white-color);
+    padding: 10px 25px;
 }
 
 
-/* <!-- ///////////////////////////////// About Info\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ --> */
-
-.about__info__container{
-    padding: var(--container-padding-alt);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.about__info__content{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    margin-top: 50px;
-}
-
-.about__info__h3{
-    color: var(--first-color);
-}
-
-.about__info__content__image{
-    width: 100%;
-    height: 300px;
-    margin-right: 40px;
-}
-
-.about__info__content__p{
-    width: 100%;
-}
-
-@media screen and (max-width: 800px){
-    .about__info__content{
-        flex-direction: column;
+@media screen and (max-width: 650px){
+    .grid__content{
+        grid-template-columns: repeat(2, 1fr);
     }
-
-    .about__info__content__image{
-        margin-right: 0;
-        margin-bottom: 40px;
+    
+    .grid__card{
+        margin: 10px 0;
     }
 }
 
 
-/* <!-- ///////////////////////////// COMPANY \\\\\\\\\\\\\\\\\\\\\\\\\\\\ --> */
+
+/* %%%%%%%%%%%%%%%%%%%%% CONCLUSION%%%%%%%%%%%%%%%%%% */
 
 
-.company{
+.service__con{
     background: var(--first-color-alt);
 }
 
-.company__container{
+.service__con__container{
     padding: var(--container-padding-alt);
+}
+
+.service__con__content{
     display: flex;
-    justify-content: space-between;
-    /* align-items: center; */
-}
-
-.company__content__h3,
-.company__content__staff__name,
-.company__card__h4{
-    color: var(--first-color);
-}
-
-.company__content__p{
-    margin: 15px 0;
-}
-
-.company__cards{
-    display: flex;
-    justify-content: space-between;
-    /* align-items: center; */
-}
-
-.company__card{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: var(--second-container-padding);
+    color: var(--black-color);
+    height: 100%;
     width: 100%;
 }
 
-.company__card:first-child{
-    margin: 0 40px;
+.service__con__content p{
+    margin: 20px 0 40px 0;
 }
 
-.company__card__image{
-    width: 100%;
-    height: 120px;
-    border-radius: 5px;
-    overflow: hidden;
-}
-
-.company__card__h4{
-    margin: 10px 0;
-}
-
-.company__card__p{
-    margin: 0 0 10px 0;
-}
-
-/* .company__card__btn{
-    margin: 20px 0;
-} */
-
-.company__card__btn i{
+.service__con__btn{
+    color: var(--black-color);
+    padding: 10px 30px;
+    border-radius: 50px;
+    background: var(--black-color);
     color: var(--white-color);
-    padding: 10px;
-    background: var(--first-color);
-    border-radius: 50%;
+}
+
+.service__con__btn:hover{
+    background: transparent;
+    color: var(--black-color);
+    border: 1px solid var(--black-color);
 }
 
 
-@media screen and (max-width: 800px){
-    .company__container{
+/* """"""""""""""""""""" SERVICE INFO """"""""""""""""""""" */
+
+.service__info{
+    background: var(--black-color);
+    color: var(--white-color);
+}
+
+.service__info__container{
+    padding: var(--container-padding-alt);
+}
+
+.service__info__content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.service__texts{
+    width: 40%;
+}
+
+.service__texts p{
+    margin: 20px 0;
+}
+
+.service__info__img{
+    width: 40%;
+    height: 300px;
+}
+
+.service__info__img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+}
+
+@media screen and (max-width: 780px){
+    .service__info__content{
         flex-direction: column;
     }
-
-    .company__cards{
-        flex-direction: column;
+    .service__texts{
+        width: 100%;
     }
-
-    .company__card:first-child{
-        margin: 40px 0;
+    .service__info__img{
+        width: 100%;
+        height: 300px;
     }
 }
 
