@@ -2,7 +2,8 @@
 
 const headerMenuIcon = document.querySelector('.header__menu__icon i'),
 mobileHeaderNav = document.querySelector('.mobile__header__nav'),
-header = document.querySelector('.header');
+header = document.querySelector('.header'),
+aboutHeader = document.querySelector('.about__header');
 
 headerMenuIcon.addEventListener("click", ()=>{
     if(headerMenuIcon.classList.contains('bx-menu-alt-right')){
@@ -22,7 +23,9 @@ window.addEventListener('scroll', ()=>{
     let windowScroll = window.scrollY;
     if (windowScroll > 20){
         header.style.boxShadow = '0 0 15px rgba(0, 0, 0, 0.2)';
+        aboutHeader.style.background = 'var(--first-color)'
     }else{
         header.style.boxShadow = 'none';
+        aboutHeader.style.background = 'transparent'
     }
 })
